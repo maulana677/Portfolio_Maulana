@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DataTables\TyperTitleDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\TyperTitle;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class TyperTitleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TyperTitleDataTable $dataTable)
     {
         return $dataTable->render('admin.typer-title.index');
     }
