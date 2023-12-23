@@ -11,6 +11,11 @@
         </div>
 
         <div class="section-body">
+            <h2 class="section-title">Typer Title</h2>
+            <p class="section-lead">
+                On this page you can create a new post and fill in all fields.
+            </p>
+
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -22,7 +27,35 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            {{ $dataTable->table() }}
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-left">
+                                                #
+                                            </th>
+                                            <th>Title</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($typerTitle as $typerTitle)
+                                            <tr>
+                                                <td>{{ ++$loop->index }}</td>
+                                                <td>{{ $typerTitle->title }}</td>
+                                                <td>
+                                                    <a href="{{ route('admin.typer-title.edit', $typerTitle->id) }}"
+                                                        class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                                    <a href="{{ route('admin.typer-title.destroy', $typerTitle->id) }}"
+                                                        class="btn btn-danger delete-item"><i
+                                                            class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -32,5 +65,9 @@
 @endsection
 
 @push('scripts')
-    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+    <script>
+        $(document).ready(function() {
+            $('#table').DataTable();
+        });
+    </script>
 @endpush
