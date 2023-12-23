@@ -19,7 +19,7 @@
     </div>
 </header>
 
-{{--  @push('scripts')
+@push('scripts')
     <script>
         @php
             $titles = [];
@@ -30,4 +30,4 @@
         @endphp
         $('.header-area .typer-title').typer({!! $titles !!});
     </script>
-@endpush  --}}
+@endpush
