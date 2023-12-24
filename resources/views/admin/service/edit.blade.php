@@ -6,16 +6,16 @@
             <div class="section-header-back">
                 <a href="features-posts.html" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
-            <h1>Typer Title</h1>
+            <h1>Services</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Posts</a></div>
-                <div class="breadcrumb-item">Typer Title</div>
+                <div class="breadcrumb-item">Services</div>
             </div>
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Typer Title</h2>
+            <h2 class="section-title">Edit Services</h2>
             <p class="section-lead">
                 On this page you can create a new post and fill in all fields.
             </p>
@@ -24,18 +24,25 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Title</h4>
+                            <h4>Edit Services</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.typer-title.update', $title->id) }}" method="POST"
+                            <form action="{{ route('admin.service.update', $service->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" name="title" class="form-control"
-                                            value="{{ $title->title }}">
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ $service->name }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <textarea type="text" name="description" class="form-control" style="height: 100px">{{ $service->description }}</textarea>
                                     </div>
                                 </div>
 

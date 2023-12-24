@@ -50,9 +50,9 @@
                                                 <td>{{ $service->name }}</td>
                                                 <td>{{ $service->description }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.typer-title.edit', $service->id) }}"
+                                                    <a href="{{ route('admin.service.edit', $service->id) }}"
                                                         class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                    <a href="{{ route('admin.typer-title.destroy', $service->id) }}"
+                                                    <a href="{{ route('admin.service.destroy', $service->id) }}"
                                                         class="btn btn-danger delete-item"><i
                                                             class="fas fa-trash-alt"></i></a>
                                                 </td>
