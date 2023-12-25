@@ -81,13 +81,18 @@
                     <span>Portfolio</span></a>
                 <ul class="dropdown-menu" style="display: none;">
                     <li>
-                        <a class="nav-link" href="#">
-                            Typer Title
+                        <a class="nav-link" href="{{ route('admin.category.index') }}">
+                            Category
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="#">
-                            Hero Section
+                            Protfolio Item
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">
+                            Section Setting
                         </a>
                     </li>
                 </ul>

@@ -7,10 +7,17 @@
                 <a href="features-posts.html" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
             <h1>About Section</h1>
-
+            <div class="section-header-breadcrumb">
+                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                <div class="breadcrumb-item">About Section</div>
+            </div>
         </div>
 
         <div class="section-body">
+            <h2 class="section-title">About Section</h2>
+            <p class="section-lead">
+                On this page you can update post.
+            </p>
             <div class="row">
                 <div class="col-12">
                     <div class="card">

@@ -9,7 +9,6 @@
             <h1>Hero Section</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Posts</a></div>
                 <div class="breadcrumb-item">Hero Section</div>
             </div>
         </div>
@@ -17,7 +16,7 @@
         <div class="section-body">
             <h2 class="section-title">Hero Section</h2>
             <p class="section-lead">
-                On this page you can create a new post and fill in all fields.
+                On this page you can update post.
             </p>
 
             <div class="row">
