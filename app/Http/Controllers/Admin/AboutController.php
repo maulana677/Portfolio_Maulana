@@ -73,7 +73,7 @@ class AboutController extends Controller
     {
         $request->validate([
             'title' => ['required', 'max:200'],
-            'description' => ['required', 'max:5000'],
+            'description' => ['required', 'max:10000'],
             'image' => ['image', 'max:5000'],
             'resume' => ['mimes:pdf,csv,txt', 'max:10000']
         ]);
