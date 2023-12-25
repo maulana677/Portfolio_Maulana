@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 /** Frontend Routes */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('resume/download', [AboutController::class, 'resumeDownload'])->name('resume.download');
 
 Route::get('/blog', function () {
     return view('frontend.blog');
