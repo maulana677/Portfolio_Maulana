@@ -9,12 +9,17 @@
             <h1>Category</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Posts</a></div>
+                <div class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">Posts</a></div>
                 <div class="breadcrumb-item">Create Category</div>
             </div>
         </div>
 
         <div class="section-body">
+            <h2 class="section-title">Create Category</h2>
+            <p class="section-lead">
+                On this page you can create a new post and fill in all fields.
+            </p>
+
             <div class="row">
                 <div class="col-12">
                     <div class="card">
