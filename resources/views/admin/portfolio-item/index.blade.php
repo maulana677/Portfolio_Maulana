@@ -39,19 +39,29 @@
                                             <th class="text-left">
                                                 #
                                             </th>
+                                            <th>Image</th>
                                             <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th>Client</th>
+                                            <th>Website</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($typerTitle as $typerTitle)
+                                        @foreach ($portfolioItem as $portfolioItem)
                                             <tr>
                                                 <td>{{ ++$loop->index }}</td>
-                                                <td>{{ $typerTitle->title }}</td>
+                                                <td>{{ $portfolioItem->image }}</td>
+                                                <td>{{ $portfolioItem->title }}</td>
+                                                <td>{{ $portfolioItem->category }}</td>
+                                                <td>{{ $portfolioItem->description }}</td>
+                                                <td>{{ $portfolioItem->client }}</td>
+                                                <td>{{ $portfolioItem->website }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.typer-title.edit', $typerTitle->id) }}"
+                                                    <a href="{{ route('admin.portfolio-item.edit', $portfolioItem->id) }}"
                                                         class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                    <a href="{{ route('admin.typer-title.destroy', $typerTitle->id) }}"
+                                                    <a href="{{ route('admin.portfolio-item.destroy', $portfolioItem->id) }}"
                                                         class="btn btn-danger delete-item"><i
                                                             class="fas fa-trash-alt"></i></a>
                                                 </td>
