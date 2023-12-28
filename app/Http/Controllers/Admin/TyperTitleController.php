@@ -6,6 +6,7 @@ use App\DataTables\TyperTitleDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\TyperTitle;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TyperTitleController extends Controller
 {
@@ -46,7 +47,8 @@ class TyperTitleController extends Controller
         $create = new TyperTitle();
         $create->title = $request->title;
         $create->save();
-        toastr()->success('Created Successfully', 'Congrats');
+
+        session()->flash("success", "Data Created Successfully");
 
         return redirect()->route('admin.typer-title.index');
     }
@@ -90,7 +92,8 @@ class TyperTitleController extends Controller
         $edit = TyperTitle::findOrFail($id);
         $edit->title = $request->title;
         $edit->save();
-        toastr()->success('Updated Successfully', 'Congrats');
+
+        session()->flash("success", "Data Updated Successfully");
 
         return redirect()->route('admin.typer-title.index');
     }

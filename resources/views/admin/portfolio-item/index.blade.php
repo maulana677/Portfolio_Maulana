@@ -42,9 +42,7 @@
                                             <th>Image</th>
                                             <th>Title</th>
                                             <th>Category</th>
-                                            <th>Description</th>
-                                            <th>Client</th>
-                                            <th>Website</th>
+                                            <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -52,12 +50,13 @@
                                         @foreach ($portfolioItem as $portfolioItem)
                                             <tr>
                                                 <td>{{ ++$loop->index }}</td>
-                                                <td>{{ $portfolioItem->image }}</td>
+                                                <td>
+                                                    <img src="{{ asset($portfolioItem->image) }}" width="100"
+                                                        alt="">
+                                                </td>
                                                 <td>{{ $portfolioItem->title }}</td>
-                                                <td>{{ $portfolioItem->category }}</td>
-                                                <td>{{ $portfolioItem->description }}</td>
-                                                <td>{{ $portfolioItem->client }}</td>
-                                                <td>{{ $portfolioItem->website }}</td>
+                                                <td>{{ $portfolioItem->category->name }}</td>
+                                                <td>{{ $portfolioItem->created_at }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.portfolio-item.edit', $portfolioItem->id) }}"
                                                         class="btn btn-primary"><i class="fas fa-edit"></i></a>

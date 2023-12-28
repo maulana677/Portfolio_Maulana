@@ -59,7 +59,7 @@ class PortfolioItemController extends Controller
         $portfolioItem->website = $request->website;
         $portfolioItem->save();
 
-        toastr()->success('Profile Item Created Successfully!', 'Success');
+        session()->flash("success", "Profile Item Created Successfully");
 
         return redirect()->route('admin.portfolio-item.index');
     }
@@ -106,6 +106,8 @@ class PortfolioItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        deleteFileIfExist($portfolioItem->image);
+        $portfolioItem->delete();
     }
 }

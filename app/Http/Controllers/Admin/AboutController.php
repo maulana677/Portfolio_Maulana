@@ -92,7 +92,7 @@ class AboutController extends Controller
             ]
         );
 
-        toastr()->success('Updated Successfully', 'Congrats');
+        session()->flash("success", "Data Updated Successfully");
 
         return redirect()->back();
     }

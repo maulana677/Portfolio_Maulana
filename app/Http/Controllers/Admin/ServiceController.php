@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ServiceController extends Controller
 {
@@ -47,7 +48,7 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->save();
 
-        toastr()->success('Created Successfully', 'Congrats');
+        session()->flash("success", "Data Created Successfully");
 
         return redirect()->route('admin.service.index');
     }
@@ -94,7 +95,7 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->save();
 
-        toastr()->success('Updated Successfully', 'Congrats');
+        session()->flash("success", "Data Updated Successfully");
 
         return redirect()->route('admin.service.index');
     }

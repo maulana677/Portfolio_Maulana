@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\PortfolioItem;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
@@ -46,7 +48,10 @@ class CategoryController extends Controller
         $category->slug = \Str::slug($request->name);
         $category->save();
 
-        toastr()->success('Category Created Successfully!');
+        // toast('success', 'successfully created');
+        // Alert::success('Success Title', 'Success Message');
+
+        session()->flash("success", "Category Created Successfully");
 
         return redirect()->route('admin.category.index');
     }
@@ -92,7 +97,8 @@ class CategoryController extends Controller
         $category->slug = \Str::slug($request->name);
         $category->save();
 
-        toastr()->success('Category Updated Successfully!');
+        // toast()->success('Category Updated Successfully!');
+        session()->flash("success", "Category Updated Successfully");
 
         return redirect()->route('admin.category.index');
     }
@@ -103,7 +109,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
         $category = Category::findOrFail($id);
         $hasItem = PortfolioItem::where('category_id', $category->id)->count();
