@@ -59,7 +59,7 @@ class PortfolioItemController extends Controller
         $portfolioItem->website = $request->website;
         $portfolioItem->save();
 
-        session()->flash("success", "Profile Item Created Successfully");
+        session()->flash("success", "Data Created Successfully");
 
         return redirect()->route('admin.portfolio-item.index');
     }
@@ -83,7 +83,9 @@ class PortfolioItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        return view('admin.portfolio-item.edit', compact('categories', 'portfolioItem'));
     }
 
     /**
@@ -95,7 +97,30 @@ class PortfolioItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'image' => ['image', 'max:5000'],
+            'title' => ['required', 'max:200'],
+            'description' => ['required'],
+            'category_id' => ['required', 'numeric'],
+            'client' => ['max:200'],
+            'website' => ['url'],
+        ]);
+
+        $portfolioItem = PortfolioItem::findOrFail($id);
+
+        $imagePath = handleUpload('image', $portfolioItem);
+
+        $portfolioItem->image = (!empty($imagePath) ? $imagePath : $portfolioItem->image);
+        $portfolioItem->title = $request->title;
+        $portfolioItem->description = $request->description;
+        $portfolioItem->category_id = $request->category_id;
+        $portfolioItem->client = $request->client;
+        $portfolioItem->website = $request->website;
+        $portfolioItem->save();
+
+        session()->flash("success", "Data Updated Successfully");
+
+        return redirect()->route('admin.portfolio-item.index');
     }
 
     /**
