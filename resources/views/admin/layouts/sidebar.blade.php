@@ -39,71 +39,52 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="nav-item active">
-                <a href="index.html" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Dropdown</span></a>
-                <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="">test</a></li>
-                </ul>
+            <li class="nav-item {{ setSidebarActive(['dashboard']) }}">
+                <a href="{{ route('dashboard') }}" class="nav-link"><i
+                        class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Sections</li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {{ setSidebarActive(['admin.typer-title.*', 'admin.hero.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Hero</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li>
-                        <a class="nav-link" href="{{ route('admin.typer-title.index') }}">
-                            Typer Title
-                        </a>
+                    <li class="{{ setSidebarActive(['admin.typer-title.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.typer-title.index') }}">Typer Title</a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="{{ route('admin.hero.index') }}">
-                            Hero Section
-                        </a>
+                    <li class="{{ setSidebarActive(['admin.hero.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.hero.index') }}">Hero section</a>
                     </li>
                 </ul>
+
             </li>
-            <li>
-                <a class="nav-link" href={{ route('admin.service.index') }}><i class="far fa-square">
-                    </i> <span>Services</span>
-                </a>
+
+            <li class="{{ setSidebarActive(['admin.service.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.service.index') }}"><i class="far fa-square"></i> <span>Services</span></a>
             </li>
-            <li>
-                <a class="nav-link" href={{ route('admin.about.index') }}><i class="far fa-square">
-                    </i> <span>About</span>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
+            <li class="{{ setSidebarActive(['admin.about.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.about.index') }}"><i class="far fa-square"></i> <span>About</span></a></li>
+
+            <li
+                class="nav-item dropdown {{ setSidebarActive(['admin.category.*', 'admin.portfolio-item.*', 'admin.portfolio-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Portfolio</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li>
-                        <a class="nav-link" href="{{ route('admin.category.index') }}">
-                            Category
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">
-                            Protfolio Item
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{{ route('admin.portfolio-section-setting.index') }}">
-                            Section Setting
-                        </a>
-                    </li>
+                    <li class="{{ setSidebarActive(['admin.category.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.category.index') }}">Category</a></li>
+                    <li class="{{ setSidebarActive(['admin.portfolio-item.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.portfolio-item.index') }}">Protfolio Item</a></li>
+                    <li class="{{ setSidebarActive(['admin.portfolio-section-setting.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.portfolio-section-setting.index') }}">Section Setting</a></li>
                 </ul>
             </li>
+
             <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.skill-item.*', 'admin.skill-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Skill</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li class="{{ setSidebarActive(['admin.skill-item.*']) }}"><a class="nav-link" href="">Skill
-                            Items</a></li>
+                    <li class="{{ setSidebarActive(['admin.skill-item.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.skill-item.index') }}">Skill Items</a></li>
                     <li class="{{ setSidebarActive(['admin.skill-section-setting.*']) }}"><a class="nav-link"
                             href="{{ route('admin.skill-section-setting.index') }}">Section Setting</a></li>
                 </ul>

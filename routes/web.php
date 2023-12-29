@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PortfolioSectionSetting;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SkillItemController;
 use App\Http\Controllers\Admin\SkillSectionController;
 use App\Http\Controllers\Admin\SkillSectionSettingController;
 use App\Http\Controllers\Admin\TyperTitleController;
@@ -54,8 +55,12 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+
 /** Admin Route */
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+
+    /** Hero Route */
     Route::resource('hero', HeroController::class);
     Route::resource('typer-title', TyperTitleController::class);
 
@@ -76,4 +81,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /** Skill Section Setting Route */
     Route::resource('skill-section-setting', SkillSectionSettingController::class);
+
+    /** Skill Items Route */
+    Route::resource('skill-item', SkillItemController::class);
+
+    /** Skill Items Route */
+    Route::resource('experience', ExperienceController::class);
+
+    /** Feedback Route */
+    Route::resource('feedback', FeedbackController::class);
+
+    /** Feedback Section Setting Route */
+    Route::resource('feedback-section-setting', FeedbackSectionSettingController::class);
 });

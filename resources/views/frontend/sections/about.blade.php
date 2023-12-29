@@ -12,8 +12,8 @@
                     <div class="desc wow fadeInUp" data-wow-delay="0.4s">
                         {!! $about->description !!}
                     </div>
-                    {{--  <a href="{{ route('resume.download') }}" class="button-primary-trans mouse-dir wow fadeInUp"  --}}
-                    <a href="" class="button-primary-trans mouse-dir wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="{{ route('resume.download') }}" class="button-primary-trans mouse-dir wow fadeInUp" <a
+                        href="" class="button-primary-trans mouse-dir wow fadeInUp" data-wow-delay="0.5s">
                         <span class="icon"><i class="fal fa-download"></i></span>
                         <span class="text">Download Resume</span>
                         <span class="dir-part"></span>
