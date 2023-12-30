@@ -50,7 +50,7 @@
                                                 <td>{{ ++$loop->index }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->position }}</td>
-                                                <td>{{ $item->description }}</td>
+                                                <td>{!! $item->description !!}</td>
                                                 <td>
                                                     <a href="{{ route('admin.feedback.edit', $item->id) }}"
                                                         class="btn btn-primary"><i class="fas fa-edit"></i></a>

@@ -8,7 +8,7 @@
             </div>
             <h1>Typer Title</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Posts</a></div>
                 <div class="breadcrumb-item">Typer Title</div>
             </div>
@@ -38,7 +38,6 @@
                                             value="{{ $title->title }}">
                                     </div>
                                 </div>
-
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
@@ -46,7 +45,6 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
