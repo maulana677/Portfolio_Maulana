@@ -55,15 +55,12 @@
                             href="{{ route('admin.hero.index') }}">Hero section</a>
                     </li>
                 </ul>
-
             </li>
-
             <li class="{{ setSidebarActive(['admin.service.*']) }}"><a class="nav-link"
                     href="{{ route('admin.service.index') }}"><i class="far fa-square"></i> <span>Services</span></a>
             </li>
             <li class="{{ setSidebarActive(['admin.about.*']) }}"><a class="nav-link"
                     href="{{ route('admin.about.index') }}"><i class="far fa-square"></i> <span>About</span></a></li>
-
             <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.category.*', 'admin.portfolio-item.*', 'admin.portfolio-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
@@ -77,7 +74,6 @@
                             href="{{ route('admin.portfolio-section-setting.index') }}">Section Setting</a></li>
                 </ul>
             </li>
-
             <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.skill-item.*', 'admin.skill-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
@@ -89,13 +85,11 @@
                             href="{{ route('admin.skill-section-setting.index') }}">Section Setting</a></li>
                 </ul>
             </li>
-
             <li class="{{ setSidebarActive(['admin.experience.*']) }}">
                 <a class="nav-link" href="{{ route('admin.experience.index') }}"><i class="far fa-square"></i>
                     <span>Experience</span>
                 </a>
             </li>
-
             <li
                 class="nav-item dropdown {{ setSidebarActive(['admin.feedback.*', 'admin.feedback-section-setting.*']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
@@ -104,7 +98,21 @@
                     <li class="{{ setSidebarActive(['admin.feedback.*']) }}"><a class="nav-link"
                             href="{{ route('admin.feedback.index') }}">Feedbacks</a></li>
                     <li class="{{ setSidebarActive(['admin.feedback-section-setting.*']) }}"><a class="nav-link"
-                            href="">Section Setting</a></li>
+                            href="{{ route('admin.feedback-section-setting.index') }}">Section Setting</a></li>
+                </ul>
+            </li>
+            <li
+                class="nav-item dropdown {{ setSidebarActive(['admin.blog-category.*', 'admin.blog.*', 'admin.blog-section-setting.*']) }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                        class="fas fa-columns"></i>
+                    <span>Blog</span></a>
+                <ul class="dropdown-menu" style="display: none;">
+                    <li class="{{ setSidebarActive(['admin.blog-category.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.blog-category.index') }}">Category</a></li>
+                    <li class="{{ setSidebarActive(['admin.blog.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.blog.index') }}">Blog List</a></li>
+                    <li class="{{ setSidebarActive(['admin.blog-section-setting.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.blog-section-setting.index') }}">Section Setting</a></li>
                 </ul>
             </li>
         </ul>
