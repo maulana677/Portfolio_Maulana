@@ -13,11 +13,11 @@
                     </div>
                 </div>
                 <div class="row skills">
-                    @foreach ($skillItems as $item)
+                    @foreach ($skillItems as $skillItem)
                         <div class="col-sm-6">
                             <div class="bar_group wow fadeInUp" data-wow-delay="0.3s" data-max="100">
-                                <div class="title">{{ $item->name }}</div>
-                                <div class="bar_group__bar thick elastic" data-value="{{ $item->percent }}"
+                                <div class="title">{{ $skillItem->name }}</div>
+                                <div class="bar_group__bar thick elastic" data-value="{{ $skillItem->percent }}"
                                     data-color="{{ getColor($loop->index) }}" data-tooltip="true"
                                     data-show-values="false" data-unit="%"></div>
                             </div>
