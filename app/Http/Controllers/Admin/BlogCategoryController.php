@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
+use Str;
 
 class BlogCategoryController extends Controller
 {
@@ -14,7 +16,8 @@ class BlogCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $blogCategory = BlogCategory::all();
+        return view('admin.blog-category.index', compact('blogCategory'));
     }
 
     /**
@@ -24,7 +27,7 @@ class BlogCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.blog-category.create');
     }
 
     /**
@@ -35,7 +38,18 @@ class BlogCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'max:200']
+        ]);
+
+        $category = new BlogCategory();
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->save();
+
+        session()->flash("success", "Data Created Successfully");
+
+        return redirect()->route('admin.blog-category.index');
     }
 
     /**
@@ -57,7 +71,6 @@ class BlogCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -69,7 +82,6 @@ class BlogCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -80,6 +92,5 @@ class BlogCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }
