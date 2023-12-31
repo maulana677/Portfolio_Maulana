@@ -109,7 +109,8 @@
                 <ul class="dropdown-menu" style="display: none;">
                     <li class="{{ setSidebarActive(['admin.blog-category.*']) }}"><a class="nav-link"
                             href="{{ route('admin.blog-category.index') }}">Category</a></li>
-                    <li class="{{ setSidebarActive(['admin.blog.*']) }}"><a class="nav-link" href="">Blog
+                    <li class="{{ setSidebarActive(['admin.blog.*']) }}"><a class="nav-link"
+                            href="{{ route('admin.blog.index') }}">Blog
                             List</a></li>
                     <li class="{{ setSidebarActive(['admin.blog-section-setting.*']) }}"><a class="nav-link"
                             href="">Section Setting</a></li>
