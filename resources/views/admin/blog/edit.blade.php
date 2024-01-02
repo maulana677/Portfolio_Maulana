@@ -8,27 +8,29 @@
             </div>
             <h1>Blog</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Posts</a></div>
-                <div class="breadcrumb-item">Create Blog</div>
+                <div class="breadcrumb-item">Blog</div>
             </div>
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Create Blog</h2>
+            <h2 class="section-title">Typer Title</h2>
             <p class="section-lead">
-                On this page you can create a new post and fill in all fields.
+                On this page you can update post.
             </p>
 
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Create Blog</h4>
+                            <h4>Edit Blog</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.blog.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.blog.update', $blog->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
                                     <div class="col-sm-12 col-md-7">
@@ -36,50 +38,47 @@
                                             <label for="image-upload" id="image-label">Choose File</label>
                                             <input type="file" name="image" id="image-upload" />
                                         </div>
-                                        @error('image')
-                                            <p class="text-danger">{{ $message }}</p>
-                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" name="title" class="form-control" value="">
-                                        @error('title')
-                                            <p class="text-danger">{{ $message }}</p>
-                                        @enderror
+                                        <input type="text" name="title" class="form-control"
+                                            value="{{ $blog->title }}">
                                     </div>
                                 </div>
+
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class="form-control selectric" name="category">
                                             <option>Select</option>
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                <option {{ $category->id == $blog->category ? 'selected' : '' }}
+                                                    value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
                                         </select>
-                                        @error('category')
-                                            <p class="text-danger">{{ $message }}</p>
-                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea name="description" class="summernote"></textarea>
-                                        @error('description')
-                                            <p class="text-danger">{{ $message }}</p>
-                                        @enderror
+                                        <textarea name="description" class="summernote">{!! $blog->description !!}</textarea>
                                     </div>
                                 </div>
+
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
-                                        <button class="btn btn-primary">Create</button>
+                                        <button class="btn btn-primary">Update</button>
                                     </div>
                                 </div>
                             </form>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -92,7 +91,7 @@
     <script>
         $(document).ready(function() {
             $('#image-preview').css({
-                'background-image': 'url("")',
+                'background-image': 'url("{{ asset($blog->image) }}")',
                 'background-size': 'cover',
                 'background-position': 'center center'
             })
