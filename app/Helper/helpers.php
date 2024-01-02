@@ -57,3 +57,9 @@ function setSidebarActive($route)
         }
     }
 }
+
+/** truncate text */
+function truncate(string $text, int $limit = 50): String
+{
+    return \Str::limit($text, $limit, '...');
+}

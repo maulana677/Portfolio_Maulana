@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg main_menu" id="main_menu_area">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Rabins">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
