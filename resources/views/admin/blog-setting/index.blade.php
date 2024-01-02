@@ -6,16 +6,16 @@
             <div class="section-header-back">
                 <a href="features-posts.html" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
-            <h1>Feedback Section Setting</h1>
+            <h1>Blog Section Setting</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Posts</a></div>
-                <div class="breadcrumb-item">Feedback Section Setting</div>
+                <div class="breadcrumb-item">Blog Section Setting</div>
             </div>
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Feedback Section Setting</h2>
+            <h2 class="section-title">Blog Section Setting</h2>
             <p class="section-lead">
                 On this page you can update post.
             </p>
@@ -27,7 +27,7 @@
                             <h4>Update Section</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.feedback-section-setting.update', 1) }}" method="POST"
+                            <form action="{{ route('admin.blog-section-setting.update', 1) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -35,7 +35,7 @@
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                     <div class="col-sm-12 col-md-7">
                                         <input type="text" name="title" class="form-control"
-                                            value="{{ $feedbackTitle->title }}">
+                                            value="{{ $blogTitle->title }}">
                                         @error('title')
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror
@@ -44,7 +44,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Sub Title</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea name="sub_title" id="" class="form-control" style="height: 100px">{!! $feedbackTitle->sub_title !!}</textarea>
+                                        <textarea name="sub_title" id="" class="form-control" style="height: 100px">{!! $blogTitle->sub_title !!}</textarea>
                                         @error('sub_title')
                                             <p class="text-danger">{{ $message }}</p>
                                         @enderror

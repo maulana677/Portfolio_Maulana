@@ -113,7 +113,7 @@
                             href="{{ route('admin.blog.index') }}">Blog
                             List</a></li>
                     <li class="{{ setSidebarActive(['admin.blog-section-setting.*']) }}"><a class="nav-link"
-                            href="">Section Setting</a></li>
+                            href="{{ route('admin.blog-section-setting.index') }}">Section Setting</a></li>
                 </ul>
             </li>
         </ul>
