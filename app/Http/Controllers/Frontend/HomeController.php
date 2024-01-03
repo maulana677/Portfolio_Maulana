@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Blog;
 use App\Models\BlogSectionSetting;
 use App\Models\Category;
+use App\Models\ContactSectionSetting;
 use App\Models\Experience;
 use App\Models\Feedback;
 use App\Models\FeedbackSectionSetting;
@@ -18,6 +19,7 @@ use App\Models\SkillItem;
 use App\Models\SkillSectionSetting;
 use App\Models\TyperTitle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -37,6 +39,7 @@ class HomeController extends Controller
         $feedbackTitle = FeedbackSectionSetting::first();
         $blogs = Blog::latest()->take(5)->get();
         $blogTitle = BlogSectionSetting::first();
+        $contactTitle = ContactSectionSetting::first();
         return view(
             'frontend.home',
             compact(
@@ -53,7 +56,8 @@ class HomeController extends Controller
                 'feedbacks',
                 'feedbackTitle',
                 'blogs',
-                'blogTitle'
+                'blogTitle',
+                'contactTitle'
             )
         );
     }
@@ -76,5 +80,19 @@ class HomeController extends Controller
     {
         $blogs = Blog::latest()->paginate(9);
         return view('frontend.blog', compact('blogs'));
+    }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'max:200'],
+            'subject' => ['required', 'max:300'],
+            'email' => ['required', 'email'],
+            'message' => ['required', 'max:2000'],
+        ]);
+
+        Mail::send(new ContactMail($request->all()));
+
+        return response(['status' => 'success', 'message' => 'Mail Sended Successfully!']);
     }
 }

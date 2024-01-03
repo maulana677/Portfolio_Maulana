@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/daterangepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.10.0/css/bootstrap-iconpicker.min.css">
     <link href="https://cdn.datatables.net/v/bs4/dt-1.13.8/datatables.min.css" rel="stylesheet">
@@ -94,7 +95,8 @@
     <script src="{{ asset('assets/js/page/features-post-create.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
-    {{--  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  --}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     @include('sweetalert::alert')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
