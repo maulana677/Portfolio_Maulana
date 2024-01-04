@@ -140,7 +140,7 @@
                     <li class="{{ setSidebarActive(['admin.footer-social.*']) }}"><a class="nav-link"
                             href="{{ route('admin.footer-social.index') }}">Social Links</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-info.*']) }}"><a class="nav-link"
-                            href="#">Footer Information</a></li>
+                            href="{{ route('admin.admin.footer-info.index') }}">Footer Information</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-contact-info.*']) }}"><a class="nav-link"
                             href="#">Footer Contact Info</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-useful-links.*']) }}"><a class="nav-link"

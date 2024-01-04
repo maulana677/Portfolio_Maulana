@@ -44,7 +44,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($footerSocial as $footer)
+                                        @foreach ($footerSocialLink as $footer)
                                             <tr>
                                                 <td>{{ ++$loop->index }}</td>
                                                 <td>
