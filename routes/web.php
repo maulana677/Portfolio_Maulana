@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\FeedbackSectionSettingController;
 use App\Http\Controllers\Admin\FooterContactInfoController;
 use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
+use App\Http\Controllers\Admin\FooterUsefullLinkController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSetting;
@@ -129,5 +130,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('footer-contact-info', FooterContactInfoController::class);
 
     /** Footer Useful Links Route */
-    Route::resource('footer-useful-links', FooterUsefulLinkController::class);
+    Route::resource('footer-useful-links', FooterUsefullLinkController::class);
 });

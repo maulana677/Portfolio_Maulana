@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\FooterUsefulLink;
 use Illuminate\Http\Request;
 
 class FooterUsefullLinkController extends Controller
@@ -14,7 +15,8 @@ class FooterUsefullLinkController extends Controller
      */
     public function index()
     {
-        //
+        $footerUseful = FooterUsefulLink::all();
+        return view('admin.footer-useful-link.index', compact('footerUseful'));
     }
 
     /**
@@ -24,7 +26,7 @@ class FooterUsefullLinkController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.footer-useful-link.create');
     }
 
     /**
@@ -35,7 +37,19 @@ class FooterUsefullLinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'max:200'],
+            'url' => ['required']
+        ]);
+
+        $link = new FooterUsefulLink();
+        $link->name = $request->name;
+        $link->url = $request->url;
+        $link->save();
+
+        session()->flash("success", "Data Created Successfully");
+
+        return redirect()->route('admin.footer-useful-links.index');
     }
 
     /**
