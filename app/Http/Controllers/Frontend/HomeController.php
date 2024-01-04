@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactMail;
 use App\Models\About;
 use App\Models\Blog;
 use App\Models\BlogSectionSetting;
@@ -84,6 +85,7 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
+
         $request->validate([
             'name' => ['required', 'max:200'],
             'subject' => ['required', 'max:300'],

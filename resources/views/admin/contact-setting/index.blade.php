@@ -36,18 +36,12 @@
                                     <div class="col-sm-12 col-md-7">
                                         <input type="text" name="title" class="form-control"
                                             value="{{ $contactTitle->title }}">
-                                        @error('title')
-                                            <p class="text-danger">{{ $message }}</p>
-                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Sub Title</label>
                                     <div class="col-sm-12 col-md-7">
                                         <textarea name="sub_title" id="" class="form-control" style="height: 100px">{!! $contactTitle->sub_title !!}</textarea>
-                                        @error('sub_title')
-                                            <p class="text-danger">{{ $message }}</p>
-                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">

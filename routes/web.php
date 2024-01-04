@@ -40,20 +40,20 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
 Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
 Route::get('blogs', [HomeController::class, 'blog'])->name('blog');
-Route::post('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('resume/download', [AboutController::class, 'resumeDownload'])->name('resume.download');
+Route::post('contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::get('/blog', function () {
-    return view('frontend.blog');
-});
+// Route::get('/blog', function () {
+//     return view('frontend.blog');
+// });
 
-Route::get('/blog-details', function () {
-    return view('frontend.blog-details');
-});
+// Route::get('/blog-details', function () {
+//     return view('frontend.blog-details');
+// });
 
-Route::get('/portfolio-details', function () {
-    return view('frontend.portfolio-details');
-});
+// Route::get('/portfolio-details', function () {
+//     return view('frontend.portfolio-details');
+// });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
