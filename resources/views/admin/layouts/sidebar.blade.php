@@ -142,9 +142,9 @@
                     <li class="{{ setSidebarActive(['admin.footer-info.*']) }}"><a class="nav-link"
                             href="{{ route('admin.footer-info.index') }}">Footer Information</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-contact-info.*']) }}"><a class="nav-link"
-                            href="#">Footer Contact Info</a></li>
+                            href="{{ route('admin.footer-contact-info.index') }}">Footer Contact Info</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-useful-links.*']) }}"><a class="nav-link"
-                            href="#">Footer Useful Links</a></li>
+                            href="{{ route('admin.footer-useful-links.index') }}">Footer Useful Links</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-help-links.*']) }}"><a class="nav-link"
                             href="#">Footer Help Links</a></li>
                 </ul>
