@@ -71,7 +71,8 @@ class FooterHelplLinkController extends Controller
      */
     public function edit($id)
     {
-        //
+        $link = FooterHelpLink::findOrFail($id);
+        return view('admin.footer-help-link.edit', compact('link'));
     }
 
     /**
@@ -83,7 +84,19 @@ class FooterHelplLinkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'max:200'],
+            'url' => ['required']
+        ]);
+
+        $link = FooterHelpLink::findOrFail($id);
+        $link->name = $request->name;
+        $link->url = $request->url;
+        $link->save();
+
+        session()->flash("success", "Data Updated Successfully");
+
+        return redirect()->route('admin.footer-help-links.index');
     }
 
     /**
@@ -94,6 +107,7 @@ class FooterHelplLinkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $link = FooterHelpLink::findOrFail($id);
+        $link->delete();
     }
 }
