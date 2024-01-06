@@ -149,6 +149,10 @@
                             href="{{ route('admin.footer-help-links.index') }}">Footer Help Links</a></li>
                 </ul>
             </li>
+            <li class="menu-header">Settings</li>
+            <li class="{{ setSidebarActive(['admin.settings.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.settings.index') }}"><i class="far fa-square"></i>
+                    <span>Settings</span></a></li>
         </ul>
     </aside>
 </div>

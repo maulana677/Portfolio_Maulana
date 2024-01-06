@@ -15,12 +15,14 @@ use App\Http\Controllers\Admin\FooterHelplLinkController;
 use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
 use App\Http\Controllers\Admin\FooterUsefullLinkController;
+use App\Http\Controllers\Admin\GeneralSettingController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\PortfolioSectionSetting;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillItemController;
 use App\Http\Controllers\Admin\SkillSectionController;
 use App\Http\Controllers\Admin\SkillSectionSettingController;
@@ -135,4 +137,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /** Footer Help Links Route */
     Route::resource('footer-help-links', FooterHelplLinkController::class);
+
+    /** Settings Route */
+    Route::get('settings', SettingController::class)->name('settings.index');
+
+    /** General setting Route */
+    Route::resource('general-setting', GeneralSettingController::class);
 });
