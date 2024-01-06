@@ -146,7 +146,7 @@
                     <li class="{{ setSidebarActive(['admin.footer-useful-links.*']) }}"><a class="nav-link"
                             href="{{ route('admin.footer-useful-links.index') }}">Footer Useful Links</a></li>
                     <li class="{{ setSidebarActive(['admin.footer-help-links.*']) }}"><a class="nav-link"
-                            href="#">Footer Help Links</a></li>
+                            href="{{ route('admin.footer-help-links.index') }}">Footer Help Links</a></li>
                 </ul>
             </li>
         </ul>

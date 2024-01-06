@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\FeedbackSectionSettingController;
 use App\Http\Controllers\Admin\FooterContactInfoController;
+use App\Http\Controllers\Admin\FooterHelplLinkController;
 use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
 use App\Http\Controllers\Admin\FooterUsefullLinkController;
@@ -131,4 +132,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     /** Footer Useful Links Route */
     Route::resource('footer-useful-links', FooterUsefullLinkController::class);
+
+    /** Footer Help Links Route */
+    Route::resource('footer-help-links', FooterHelplLinkController::class);
 });
