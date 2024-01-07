@@ -132,8 +132,6 @@
             }
         })
 
-
-
         // sweet alert for delete
         $(document).ready(function() {
             $('body').on('click', '.delete-item', function(e) {

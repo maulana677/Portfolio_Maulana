@@ -10,7 +10,7 @@
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Posts</a></div>
-                <div class="breadcrumb-item">Typer Title</div>
+                <div class="breadcrumb-item">Create Typer Title</div>
             </div>
         </div>
 

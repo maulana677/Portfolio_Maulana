@@ -17,7 +17,7 @@
         <div class="section-body">
             <h2 class="section-title">Typer Title</h2>
             <p class="section-lead">
-                On this page you can create a new post and fill in all fields.
+                On this page you can update post.
             </p>
 
             <div class="row">
