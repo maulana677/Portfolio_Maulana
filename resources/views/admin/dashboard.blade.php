@@ -16,7 +16,7 @@
                             <h4>Total Blogs</h4>
                         </div>
                         <div class="card-body">
-                            {{--  {{ $blogCount }}  --}}
+                            {{ $blogCount }}
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                             <h4>Total Skills</h4>
                         </div>
                         <div class="card-body">
-                            {{--  {{ $skilCount }}  --}}
+                            {{ $skilCount }}
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <h4>Total Portfolios</h4>
                         </div>
                         <div class="card-body">
-                            {{--  {{ $portfolioCount }}  --}}
+                            {{ $portfolioCount }}
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                             <h4>Total Feedback</h4>
                         </div>
                         <div class="card-body">
-                            {{--  {{ $feedbackCount }}  --}}
+                            {{ $feedbackCount }}
                         </div>
                     </div>
                 </div>

@@ -3,12 +3,9 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <div class="section-header-back">
-                <a href="#" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
-            </div>
             <h1>Skill Section Setting</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                 <div class="breadcrumb-item">Skill Section Setting</div>
             </div>
         </div>
@@ -37,14 +34,12 @@
                                             value="{{ $skillSetting->title }}">
                                     </div>
                                 </div>
-
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Sub Title</label>
                                     <div class="col-sm-12 col-md-7">
                                         <textarea name="sub_title" id="" class="form-control" style="height: 100px">{!! $skillSetting->sub_title !!}</textarea>
                                     </div>
                                 </div>
-
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
                                     <div class="col-sm-12 col-md-7">
@@ -54,8 +49,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
@@ -63,9 +56,6 @@
                                     </div>
                                 </div>
                             </form>
-
-
-
                         </div>
                     </div>
                 </div>
