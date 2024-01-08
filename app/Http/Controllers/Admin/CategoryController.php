@@ -17,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $blogCategory = Category::all();
-        return view('admin.portfolio-category.index', compact('blogCategory'));
+        $portfolioCategory = Category::all();
+        return view('admin.portfolio-category.index', compact('portfolioCategory'));
     }
 
     /**
